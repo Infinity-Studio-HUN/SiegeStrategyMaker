@@ -1,0 +1,258 @@
+* {
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --primary-bg: #fff;
+    --primary-text: #111;
+    --secondary-bg: #eee;
+    --secondary-text: #fff;
+    --option-hover: #ddd;
+    --shadow: rgba(76, 116, 175, 0.15);
+}
+
+.theme-white {
+    --primary-bg: #fff;
+    --primary-text: #111;
+    --secondary-bg: #ddd;
+    --secondary-text: #222;
+    --option-hover: #bbb;
+    --shadow: rgba(76, 116, 175, 0.15);
+}
+
+.theme-black {
+    --primary-bg: #111;
+    --primary-text: #fff;
+    --secondary-bg: #222;
+    --secondary-text: #fff;
+    --option-hover: #333;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+.theme-default {
+    --primary-bg: #1a1a7a;
+    --primary-text: #fff;
+    --secondary-bg: #1a4a7a;
+    --secondary-text: #eee;
+    --option-hover: #b3d1f7;
+    --shadow: rgba(26, 74, 122, 0.15);
+}
+
+* {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    font-size: 16px;
+}
+
+.header {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.title {
+    width: 40%;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+.toolbar {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.toolbar>select {
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+
+.custom-map-select {
+    position: relative;
+    display: inline-block;
+    width: 220px;
+    font-family: inherit;
+}
+
+.selected-map {
+    background-color: var(--primary-bg);
+    color: var(--secondary-text);
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    min-height: 40px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+.selected-map:hover {
+    background-color: var(--option-hover);
+}
+
+.map-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--primary-bg);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 8px var(--shadow);
+    z-index: 10;
+    max-height: 360px;
+    overflow-y: auto;
+    margin-top: 2px;
+    color: var(--primary-text);
+    font-family: inherit;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+.map-option {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 15px;
+}
+
+.map-option:hover {
+    background: var(--option-hover);
+}
+
+.map-option img {
+    margin-right: 8px;
+    border-radius: 4px;
+    background: #111;
+}
+
+#socials {
+    color: var(--primary-text);
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+#socials .popup {
+    background: var(--primary-bg);
+    color: var(--primary-text);
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px var(--secondary-bg);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 260px;
+}
+#socials .popup-title {
+    color: var(--primary-text);
+    font-size: 1.2em;
+    margin-bottom: 16px;
+}
+#socials .youtube-btn {
+    display: inline-block;
+    background: var(--secondary-bg);
+    color: var(--primary-text);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 12px;
+}
+#socials .tiktok-btn {
+    display: inline-block;
+    background: var(--secondary-bg);
+    color: var(--primary-text);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 12px;
+}
+#socials .close-btn {
+    color: var(--primary-text);
+    display: block;
+    margin: 18px auto 0 auto;
+    padding: 8px 20px;
+    border: none;
+    background: var(--secondary-bg);
+    border-radius: 4px;
+    cursor: pointer;
+}
+#socials a img {
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .title, .toolbar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .toolbar > select,
+    .custom-map-select {
+        width: 100%;
+        font-size: 15px;
+        min-width: 0;
+    }
+
+    .selected-map {
+        font-size: 15px;
+        min-height: 36px;
+        padding: 8px 10px;
+    }
+
+    .map-options {
+        font-size: 14px;
+        max-height: 220px;
+    }
+
+    .map-option {
+        font-size: 14px;
+        padding: 7px 10px;
+    }
+}
